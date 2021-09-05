@@ -1,0 +1,38 @@
+
+
+    <div class="col-12 row ">
+        <div class="page__section col-12">
+            <nav class="breadcrumb breadcrumb_type5" aria-label="Breadcrumb">
+              <ol class="breadcrumb__list r-list">
+                <li class="breadcrumb__group">
+                  <a href="" class="breadcrumb__point r-link"><h4>Fichier</h4></a>
+                  <span class="breadcrumb__divider" aria-hidden="true"><h4>›</h4></span>
+                </li>
+                <li class="breadcrumb__group">
+                  <a href="" class="breadcrumb__point r-link"><h4>Ajouter  </h4></a>
+                </li>
+              </ol>
+            </nav>
+          </div>
+    </div>
+    <h3>Ajouter un nouveau Fichier</h3>
+    
+    <div class="col-12 row justify-content-center">
+      <form class="col-8 card box mt-4 " id="form" method="post" action="http://localhost:3000/File/upload" enctype="multipart/form-data">
+        <div class="row justify-content-center">
+            <div class="row mt-4 justify-content-center">
+                <input type="file" name="file" />
+            </div>
+            <select class="form-controle col-2 text-center mt-4" name="depart" aria-label="Default select example">
+                <% Departement.forEach(function(dept){ %>
+                <option value=" <%= dept.id %>"><%= dept.dept_name %></option>
+                <% }); %>
+              </select>
+        </div>
+      
+      <br/>
+        <div class="row mt-2 mb-4 justify-content-center">
+          <button type="submit" class="btn btn-primary col-4">Ajouter</button>
+        </div>
+      </form>
+    </div>

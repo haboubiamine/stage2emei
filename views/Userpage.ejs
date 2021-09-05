@@ -1,0 +1,46 @@
+<div class="col-12 row justify-content-center">
+<div class="col-8 row ">
+    <div class="page__section col-12">
+        <nav class="breadcrumb breadcrumb_type5" aria-label="Breadcrumb">
+          <ol class="breadcrumb__list r-list">
+            <li class="breadcrumb__group">
+              <a href="#0" class="breadcrumb__point r-link"><h4>Fichier</h4></a>
+              <span class="breadcrumb__divider" aria-hidden="true"><h4>›</h4></span>
+            </li>
+            <li class="breadcrumb__group">
+              <a href="#0" class="breadcrumb__point r-link"><h4>Liste</h4></a>
+            </li>
+            <li class="breadcrumb__group">
+                <form class="formlogout2" method="POST" action="/users/logout" >
+                    <button type="submit" >  <i  class="fas fa-sign-out-alt grow" style="color: red;"></i></button>
+                  </form>
+              </li>
+           
+          </ol>
+        </nav>
+      </div>
+</div>
+<div class="col-8 row justify-content-center mt-4">
+
+  <table class="table table-bordered col-8 box">
+    <thead class="thead-dark text-center">
+        <tr>
+            <th class="text-capitalize">Fichier</th>
+            <th class="col-3 text-capitalize">Action</th>
+        </tr>
+    </thead>
+    <tbody class=" text-center">
+
+      <% Data.forEach(function(file){ %>
+        <tr>
+          <td><%= file.file_name %></td>
+          <td><a href="<%= file.url %>" download="<%= file.file_name %>"><i class="fas fa-download mr-3 grow" style="color: limegreen;"></i></a> </td>
+        </tr>
+      <% }); %>
+      
+    </tbody>
+</table>
+
+</div>
+
+</div>

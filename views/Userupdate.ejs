@@ -1,0 +1,40 @@
+<div class="col-12 row ">
+    <div class="page__section col-12">
+        <nav class="breadcrumb breadcrumb_type5" aria-label="Breadcrumb">
+          <ol class="breadcrumb__list r-list">
+            <li class="breadcrumb__group">
+              <a href="" class="breadcrumb__point r-link"><h4>Users</h4></a>
+              <span class="breadcrumb__divider" aria-hidden="true"><h4>›</h4></span>
+            </li>
+            <li class="breadcrumb__group">
+              <a href="" class="breadcrumb__point r-link"><h4>Modifier  </h4></a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+</div>
+<h3>Modifier un nouveau Utilisateur</h3>
+<div class="col-12 row justify-content-center">
+  <form class="col-8 card box mt-4 " method="POST" action="/Users/update/<%= user.id %>">
+    <div class="row mt-4 justify-content-center">
+      <div class="col-4">
+        <input name="email" type="text" value="<%= user.email %>" class="form-control text-center" placeholder="email" >
+      </div>
+      <div class="col-4">
+        <input name="pwd" type="password" value="" class="form-control text-center" placeholder="password"  >
+      </div>
+     
+        <select class="form-controle col-4 text-center" name="depart" aria-label="Default select example">
+            <% Departement.forEach(function(dept){ %>
+            <option value=" <%= dept.id %>"><%= dept.dept_name %></option>
+            <% }); %>
+          </select>
+        </div>
+    
+    
+  
+    <div class="row mt-2 mb-4 justify-content-center">
+      <button type="submit" class="btn btn-primary col-4">Modifier</button>
+    </div>
+  </form>
+</div>

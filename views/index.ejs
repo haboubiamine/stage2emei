@@ -1,2 +1,22 @@
-<p>This is the home page and it takes the full width of the layout</p>
-<a href="/about">About</a>
+<main class="main box border" style="background-color: #F1F5F9;">
+	<div class="container">
+		<section class="wrapper">
+			<form name="login" class="form" method="POST" action="/users/auth">
+				<div class="input-control">
+					<label for="email" class="input-label" hidden>Email Address</label>
+					<input type="email" name="email" class="input-field" placeholder="Email Address">
+				</div>
+				<div class="input-control">
+					<label for="pwd" class="input-label" hidden>Password</label>
+					<input type="password" name="pwd" class="input-field" placeholder="Password">
+				</div>
+				<div class="input-control row justify-content-center">
+					
+					<input type="submit" name="submit" class="input-submit grow" value="Login" >
+				</div>
+			</form>
+			
+			
+		</section>
+	</div>
+</main>

@@ -1,26 +1,42 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%- title %></title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="http://localhost:3000/css/main.css">
+    <script src="http://localhost:3000/Tools/dropzone.js"></script>
+    <%- include('../partials/header.ejs') %>
 </head>
 <body>
 
-    <div class="wrapper">
-
-        <%- include('../partials/header.ejs') %>
-
-        <div class="layout-sidebar">
-            <main><%- body %></main>
-            <side>Sidebar</side>
-        </div>
-
-        <%- include('../partials/footer.ejs') %>
-
+    <div id="container">
+    <div id="sideMenu">
+      <div id="sideMenuFixed"></div>
+      <div id="sidecontent">
+        <img src="http://localhost:3000/Images/logo.png"  style="width: 150px;height: 100px;object-fit: contain;" />
+  
+      <ul class="menu">
+        <li>Main</li>
+        <li><a href="http://localhost:3000/Dept">Departement</a></li>
+        <li><a href="http://localhost:3000/users">Users</a></li>
+        <li><a href="http://localhost:3000/file">fichiers</a></li>
+      </ul>
+      <form class="formlogout" method="POST" action="/users/logout" >
+        <button type="submit" >  <i  class="fas fa-sign-out-alt grow" style="color: red;"></i></button>
+      </form>
+      
+    
+      <!--<div class="addCategory"><span class="plus">+</span> Add Category</div>-->
+      </div>
     </div>
-
-
+    <div id="content">
+      <div id="titleBar">
+        <!-- <h2>Dashboard</h2> -->
+        <%- body %>
+    </div>
+  </div>
+  </div>
 </body>
+<%- include('../partials/footer.ejs') %>
 </html>
